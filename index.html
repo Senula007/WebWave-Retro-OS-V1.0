@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWave Retro OS</title>
+    <link rel="icon" type="image/jpeg" href="assets/img/Logo White.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        
+        :root {
+            --font-main: 'VT323', monospace;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <div id="crt-overlay"></div>
+
+    
+    <div id="boot-screen">
+        <h1>WEBWAVE BIOS v1.0</h1>
+        <p>Checking Memory... OK</p>
+        <p>Loading Kernel... OK</p>
+        <div class="loading-bar-container">
+            <div class="loading-bar-fill" id="boot-progress"></div>
+        </div>
+    </div>
+
+    
+    <div id="login-screen">
+        <div class="login-window pixel-border">
+            <div class="title-bar"
+                style="background: var(--window-header-bg); color: var(--window-header-text); padding: 4px 8px; font-weight: bold;">
+                Authentication Required
+            </div>
+            <div class="login-content">
+                <h2>WELCOME USER</h2>
+                <div style="font-size: 48px;">💾</div>
+                <input type="text" id="username-input" class="pixel-input" placeholder="ENTER USERNAME"
+                    autocomplete="off" maxlength="15" autofocus>
+                <div id="login-error" style="color: red; height: 20px; font-size: 16px;"></div>
+                <button id="login-btn" class="pixel-btn">LOGIN</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="desktop">
+
+        
+        <div id="desktop-icons-container"
+            style="padding: 20px; display: flex; flex-direction: column; gap: 20px; width: fit-content;">
+            
+        </div>
+
+        
+        <div id="windows-container">
+            
+        </div>
+
+        
+        <div id="taskbar">
+            <div class="taskbar-left" style="display: flex; gap: 8px;">
+                <button id="start-btn" class="pixel-btn" style="font-weight: 900;">⚡ START</button>
+                <div id="running-apps" style="display: flex; gap: 4px;">
+                    
+                </div>
+            </div>
+            <div class="taskbar-right" style="display: flex; align-items: center; gap: 16px;">
+                <span id="clock-display">00:00:00</span>
+                <span id="user-display">GUEST</span>
+                <button id="logout-btn" class="pixel-btn" style="padding: 2px 8px; font-size: 14px;">EXIT</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="js/windowManager.js"></script>
+    <script src="js/apps.js"></script>
+    <script src="js/minesweeper.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
